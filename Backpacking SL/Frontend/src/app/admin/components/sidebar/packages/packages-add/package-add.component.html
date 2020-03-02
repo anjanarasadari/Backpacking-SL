@@ -1,0 +1,110 @@
+<link href="//netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+<!------ Include the above in your HEAD tag ---------->
+
+    <div class="container">    
+        <div id="loginbox" style="margin-top:50px;" class="mainbox col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">                    
+            <div class="panel panel-info" >
+                    <div class="panel-heading">
+                        <div class="panel-title">Package Details Form</div>
+                        
+                    </div>     
+
+                    <div style="padding-top:30px" class="panel-body" >
+
+                        <div style="display:none" id="login-alert" class="alert alert-danger col-sm-12"></div>
+                            
+                        <form #signUpForm="ngForm" (ngSubmit)="signUpForm.valid && onSubmit(signUpForm)">
+                          <div class="form-row">
+                            <div class="col form-group">
+                                <label>Package Name *</label>
+                                <input type="username" #userName="ngModel" [(ngModel)]="packageService.selectedPackage.username"  name="username" class="form-control" placeholder=""
+                                required  [ngClass]="{'invalid-textbox' :signUpForm.submitted && !username.valid }">
+                                <div *ngIf="signUpForm.submitted && !username.valid">
+                                   <label class="validation-message">This field is required.</label>
+                                </div>
+                            </div>
+                          </div> <br>
+
+                          <div class="form-row">
+                            <div class="col form-group">
+                              <label>Description * </label>
+                                <input type="text"  #firstName="ngModel" [(ngModel)]="packageService.selectedPackage.firstName" name="firstName" class="form-control" placeholder=""
+                                required  [ngClass]="{'invalid-textbox' :signUpForm.submitted && !firstName.valid }">
+                                <div *ngIf="signUpForm.submitted && !firstName.valid">
+                                  <label class="validation-message">This field is required.</label>
+                                </div>
+                              </div>
+                           
+                          </div>
+
+                          <div class="form-row">
+                           
+                            <div class="col form-group">
+                              <label>Package valid date</label>
+                                <input type="date" #birthDate="ngModel" [(ngModel)]="packageService.selectedPackage.birthDate" name="birthDate" placeholder="MM/DD/YYYY" class="form-control" placeholder=""
+                                required  [ngClass]="{'invalid-textbox' :signUpForm.submitted && !birthDate.valid }">
+                                <div *ngIf="signUpForm.submitted && !birthDate.valid">
+                                </div>
+                            </div>
+                          </div>
+
+                          <div class="form-group">
+                            <label class="form-check form-check-inline">
+                              <input class="form-check-input" type="radio" name="gender" value="male" #gender="ngModel" [(ngModel)]="packageService.selectedPackage.gender"
+                              required  [ngClass]="{'invalid-textbox' :signUpForm.submitted && !gender.valid }">
+                              <div *ngIf="signUpForm.submitted && !gender.valid">
+                              </div>
+                              <span class="form-check-label"> DayTour </span>
+                            </label>
+                            <label class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="gender" value="female" #gender="ngModel" [(ngModel)]="packageService.selectedPackage.gender"
+                                required  [ngClass]="{'invalid-textbox' :signUpForm.submitted && !gender.valid }">
+                                <div *ngIf="signUpForm.submitted && !gender.valid">
+                                </div>
+                              <span class="form-check-label"> Multiday Tour</span>
+                            </label>
+                          </div>
+
+                          <div class="form-group input-group">
+                            <div class="input-group-prepend">
+                              <span class="input-group-text">  </span>
+                            </div>
+                            <label>Price *</label>
+    	                          <input name="phoneNumber" #phoneNumber="ngModel" [(ngModel)]="packageService.selectedPackage.phoneNumber" class="form-control" placeholder="Phone number" type="text"
+                                required  [ngClass]="{'invalid-textbox' :signUpForm.submitted && !phoneNumber.valid }">
+                                <div *ngIf="signUpForm.submitted && !phoneNumber.valid">
+                                  <label class="validation-message">This field is required.</label>
+                                </div>
+                          </div>
+
+                          <div class="form-row">
+                            <div class="col form-group">
+		                          <label>Package Days *</label>
+		                            <select id="inputState" #nationality="ngModel" [(ngModel)]="packageService.selectedPackage.nationality" name="nationality" class="form-control" placeholder=""
+                                required  [ngClass]="{'invalid-textbox' :signUpForm.submitted && !nationality.valid }">
+                                <div *ngIf="signUpForm.submitted && !nationality.valid">
+                                  <label class="validation-message">This field is required.</label>
+                                </div>
+                                  <option value="3 Days">3 Days</option>
+                                  <option value="06 Days">06 Days</option>
+                                  <option value="09 Days">09 Days</option>
+                                  <option  value="12 Days" selected>12 Days</option>
+                                  <option value="2 weeks">2 weeks</option>
+                                  
+                                 
+                                </select>
+                            </div>
+                          </div> <br>
+
+                            
+                            
+                            <div class="form-group">
+                                <input type="submit" class="btn btn-primary btn-block" value="Submit">
+                            </div>
+                             <p><small class="text-muted">By clicking the 'Sign Up' button, you confirm that you accept our  Terms of use and Privacy Policy.</small> </p>
+                        </form> 
+                      </div>                     
+                    </div>  
+        </div>

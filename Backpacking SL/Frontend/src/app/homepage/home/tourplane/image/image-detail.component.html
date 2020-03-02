@@ -1,0 +1,59 @@
+<app-nav></app-nav>
+<br><br><br><br><br><br>
+<div class="row">
+        <div class ="col-md-12">
+            <div [ngStyle]="{'background-image':'url('+image.url+')'}" class="img-container"></div>
+           
+        </div>
+        
+        <div class ="row">
+                <div class ="col-md-12" >
+                
+                <section>
+                    <div [ngStyle]="{'background-image':'url('+image.url1+')'}" class="img-container1" ></div>
+                    <div [ngStyle]="{'background-image':'url('+image.url2+')'}" class="img-container1"></div>
+                    <div [ngStyle]="{'background-image':'url('+image.url3+')'}" class="img-container1"></div>
+                    <div [ngStyle]="{'background-image':'url('+image.url4+')'}" class="img-container1"></div>
+                </section>
+                <section>
+                    <div [ngStyle]="{'background-image':'url('+image.url5+')'}" class="img-container1"></div>
+                    <div [ngStyle]="{'background-image':'url('+image.url6+')'}" class="img-container1"></div>
+                    <div [ngStyle]="{'background-image':'url('+image.url7+')'}" class="img-container1"></div>
+                    <div [ngStyle]="{'background-image':'url('+image.url8+')'}" class="img-container1"></div>
+                </section>
+               
+            </div>  
+        </div>
+   
+    </div>
+    
+    <div class="split right">
+            <br><br><br><br><br>
+            <div class="header">
+                    <span id="header">
+                            {{image.header}}
+                        </span>
+            </div>
+            <br>
+            <div class="title">
+                    <span id="title">
+                            {{image.title}}
+                        </span>
+            </div>
+            <br>
+            
+            <div class="row">
+                    <div class = "description">
+                        <span id="caption">
+                            {{image.caption}}
+                        </span>
+                        </div>
+                </div>
+               <span style="border: 1px solid rgba(0,0,0,0.1); box-shadow: inset 0 1px 0 rgba(255,255,255,0.7);" class="btn btn-success btn-lg"  [routerLink]="['/forms',id,acc]"  [class.active]="filterBy=='all'" (click)="filterBy='all'"><i class="glyphicon glyphicon-ok">Plan Your Tour >></i></span><br><br>
+            <div class="border-top card-body text-center"><a [routerLink]="['/home']">BACKPACKING SRI LANKA</a></div>
+        </div>
+        
+        
+        
+    
+    

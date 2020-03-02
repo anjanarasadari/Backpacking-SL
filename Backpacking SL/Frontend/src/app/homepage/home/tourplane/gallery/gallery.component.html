@@ -1,0 +1,51 @@
+<app-nav></app-nav>
+  
+  
+<br><br><br><br>
+
+ <!--galary--->
+ <div class="border-top card-body text-right"><a [routerLink]="['/home']">HOME</a></div>       
+<h2><b>Best Day Trips from  Sri Lanka</b></h2>
+        <article>
+            <section>
+                <p>Use <b>Backpacking Sri Lanka</b> as a hub to explore other exciting historic locations around the Sri Lanka.If you’re planning to visit Kandy Sri Lanka for a holiday, add a short weekend getaway to your itinerary and get cheap deals on day tours from Kandy. </p>
+            </section>    
+            <section>
+                <p> Many of the best Sri Lanka cities, villages, castles and famous landmarks can be included in one day trips from Kandy, when you travel by train, by coach, or by car. Choose from a wide variety of Kandy breaks. Book one of the day trips from Kandy to see the remarkable Places in Sri Lanka. We will send a experience and expert who drive carefully in Sri Lankan Roads, well expert in activities, trustworthy of your Day tour.</p>
+            </section>
+        </article>
+    
+       
+<div class="row">
+
+    <button type="button" style="margin:5px;"class="btn btn" [class.active]="filterBy=='all'" (click)="filterBy='all'">TOUR PACKAGES </button>
+    <button type="button" style="margin:5px;" class="btn btn" [class.active]="filterBy=='galle'" (click)="filterBy='galle'">DAY TOURS</button>
+    <button type="button" style="margin:5px;" class="btn btn" [class.active]="filterBy=='matara'" (click)="filterBy='matara'">MULTI DAY TOUS</button>
+
+    <br>
+
+    <div class="card-columns" id="ex-2">
+            <div class="card" data-aos="zoom-in"*ngFor="let image of visibleImages | imageFilter:filterBy">
+                <a [routerLink]="['/image',image.id]">  
+               <img class="card-img-top" src="{{image.url}}"  height="200px" width="150px" alt="Card image cap" >
+               </a>
+               <div class="card-body">
+                  <h5 class="card-title">{{image.title}}</h5>
+                  <p class="card-text">{{image.category}}</p>
+                </div>
+        
+              </div>
+            </div>
+
+    <!--<ul id ="thumbnailsList">
+        <li *ngFor="let image of visibleImages | imageFilter:filterBy"> 
+            <a [routerLink]="['/image',image.id]">
+            <img src="{{image.url}}" class="tn" width="200" height="160" >
+            
+      
+            </a>
+            
+        </li>
+    
+    </ul>-->
+</div>
